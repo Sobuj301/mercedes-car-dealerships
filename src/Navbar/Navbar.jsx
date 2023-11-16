@@ -5,33 +5,35 @@ import { AuthContext } from "../Components/Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
-    const {users,logout} = useContext(AuthContext)
-    
+    const { users, logout } = useContext(AuthContext)
+
 
     const links = <>
         <li><NavLink to="/"> Home </NavLink></li>
         <li><NavLink to="/addProduct"> Add Product </NavLink></li>
         <li><NavLink to="/myCart"> My Cart </NavLink></li>
-        
-         
+
+
+
+
     </>
 
 
-const handleLogout = () =>{
-    logout()
-    .then(result =>{
-        Swal.fire({
-            position: "top",
-            icon: "success",
-            title: "Logout successfully",
-            showConfirmButton: false,
-            timer: 1500
-          });
-    })
-    .catch(err => {
-        console.log(err.message)
-    })
-}
+    const handleLogout = () => {
+        logout()
+            .then(result => {
+                Swal.fire({
+                    position: "top",
+                    icon: "success",
+                    title: "Logout successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+            .catch(err => {
+                console.log(err.message)
+            })
+    }
     return (
         <div className="navbar bg-base-100 ">
             <div className="navbar-start ">
@@ -49,17 +51,17 @@ const handleLogout = () =>{
             <div className="navbar-center  hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-1">
 
-                     {links}
+                    {links}
                 </ul>
             </div>
             <div className="navbar-end">
                 {
-                    users? <div>
+                    users ? <div>
                         <p>{users.email}</p>
                         <button onClick={handleLogout}>Logout</button>
-                        </div> 
-                    :
-                    <Link to="/login"><button>Login</button></Link>
+                    </div>
+                        :
+                        <Link to="/login"><button>Login</button></Link>
                 }
             </div>
         </div>

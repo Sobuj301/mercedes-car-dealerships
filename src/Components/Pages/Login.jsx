@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
 const [error,setError] = useState(null)
 const {userLogin,googleLogin} = useContext(AuthContext)
+const navigate = useNavigate()
 
 
 const handleLogin = event =>{
@@ -27,6 +28,8 @@ const handleLogin = event =>{
         timer: 1500
       });
     setError()
+    navigate('/')
+    
     })
     .catch(err => {
         console.log(err.message)
