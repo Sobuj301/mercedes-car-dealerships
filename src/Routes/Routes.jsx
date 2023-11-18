@@ -9,6 +9,7 @@ import Register from "../Components/Register";
 import PrivateRoutes from "../Components/Private/PrivateRoutes";
 import BrandDetails from "../Components/Pages/BrandDetails";
 import DetailsProduct from "../Components/Pages/DetailsProduct";
+import Update from "../Components/Pages/Update";
 
 
 
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
           path:"/details/:id",
           element:<PrivateRoutes><DetailsProduct></DetailsProduct></PrivateRoutes>,
           
+        },
+        {
+          path:'/update/:id',
+          element:<Update></Update>,
+          loader:({params})=> fetch(`http://localhost:5000/brand/${params.id}`)
         }
        
       ])

@@ -1,20 +1,25 @@
+import { useEffect, useState } from "react";
+import Cart from "../Cart";
 
 const MyCards = () => {
+
+    const [carts,setCarts] = useState()
+    useEffect(() =>{
+        fetch('http://localhost:5000/carts')
+        .then(res =>res.json())
+        .then(data => setCarts(data))
+    },[])
+
+    console.log(carts)
+
+
+
     return (
-        <div>
-            
-
-
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+           
+            {
+               carts?.map(cart => <Cart key={cart._id} cart={cart}></Cart>) 
+            }
         </div>
     );
 };
