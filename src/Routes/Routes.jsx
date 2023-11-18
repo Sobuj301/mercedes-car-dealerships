@@ -7,6 +7,10 @@ import MyCards from "../Components/Pages/MyCards";
 import Login from "../Components/Pages/Login";
 import Register from "../Components/Register";
 import PrivateRoutes from "../Components/Private/PrivateRoutes";
+import BrandDetails from "../Components/Pages/BrandDetails";
+import DetailsProduct from "../Components/Pages/DetailsProduct";
+
+
 
 const router = createBrowserRouter([
     {
@@ -33,7 +37,19 @@ const router = createBrowserRouter([
         {
             path:'/register',
             element:<Register></Register>
+        },
+        {
+          path:'/brandDetails/:name',
+          element:<BrandDetails></BrandDetails>,
+          loader:({params}) => fetch(`http://localhost:5000/brands/${params.name}`)
+
+        },
+        {
+          path:"/details/:id",
+          element:<PrivateRoutes><DetailsProduct></DetailsProduct></PrivateRoutes>,
+          
         }
+       
       ])
     },
   ]);

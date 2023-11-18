@@ -1,0 +1,50 @@
+[
+    {
+      "customer_id": "CUST123",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "rating": 5,
+      "comment": "Excellent product! The quality exceeded my expectations. Fast delivery and great customer service.",
+      "date": "2023-03-01"
+    },
+    {
+      "customer_id": "CUST456",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "rating": 4,
+      "comment": "Good experience overall. The product is sturdy, but there was a slight delay in delivery.",
+      "date": "2023-03-05"
+    },
+    {
+      "customer_id": "CUST789",
+      "name": "Bob Johnson",
+      "email": "bob.johnson@example.com",
+      "rating": 3,
+      "comment": "Product is okay, but I expected more features for the price. Customer support needs improvement.",
+      "date": "2023-03-10"
+    },
+    {
+      "customer_id": "CUST234",
+      "name": "Alice Brown",
+      "email": "alice.brown@example.com",
+      "rating": 5,
+      "comment": "Absolutely love it! The product arrived on time, and it works flawlessly. Highly recommended.",
+      "date": "2023-03-15"
+    },
+    {
+      "customer_id": "CUST567",
+      "name": "Charlie Davis",
+      "email": "charlie.davis@example.com",
+      "rating": 2,
+      "comment": "Disappointed with the quality. The product broke after a few uses. Not worth the price.",
+      "date": "2023-03-20"
+    },
+    {
+      "customer_id": "CUST890",
+      "name": "Eva Wilson",
+      "email": "eva.wilson@example.com",
+      "rating": 4,
+      "comment": "Good value for money. The product is durable, and the customer service was helpful when I had a question.",
+      "date": "2023-03-25"
+    }
+  ]
