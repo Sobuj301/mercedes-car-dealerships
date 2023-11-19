@@ -1,13 +1,17 @@
+import { useState } from "react";
 import Swal from "sweetalert2";
 
 
-const Cart = ({cart}) => {
+const Cart = ({cart ,carts,setCarts}) => {
     const {_id,name,brand,price,details,rating,photo} = cart;
+   
+    
+    
 
     const handleDelete = id => {
         console.log(id)
         fetch(`http://localhost:5000/carts/${id}`,{
-            method:"DELETE"
+            method:"DELETE",
         })
         .then(res => res.json())
         .then(data => {
@@ -21,6 +25,8 @@ const Cart = ({cart}) => {
                     timer: 1500
                   });
             }
+            const remaining = carts?.filter(cart => cart._id !== id);
+            setCarts(remaining)
         })
     }
     return (

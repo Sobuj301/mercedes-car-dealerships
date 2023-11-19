@@ -4,6 +4,7 @@ import Cart from "../Cart";
 const MyCards = () => {
 
     const [carts,setCarts] = useState()
+
     useEffect(() =>{
         fetch('http://localhost:5000/carts')
         .then(res =>res.json())
@@ -18,7 +19,7 @@ const MyCards = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
            
             {
-               carts?.map(cart => <Cart key={cart._id} cart={cart}></Cart>) 
+               carts?.map(cart => <Cart key={cart._id} cart={cart} carts={carts} setCarts={setCarts}></Cart>) 
             }
         </div>
     );
