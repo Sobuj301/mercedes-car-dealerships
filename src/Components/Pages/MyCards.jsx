@@ -6,7 +6,7 @@ const MyCards = () => {
     const [carts,setCarts] = useState()
 
     useEffect(() =>{
-        fetch('http://localhost:5000/carts')
+        fetch('https://server-side-kappa-five.vercel.app/carts')
         .then(res =>res.json())
         .then(data => setCarts(data))
     },[])

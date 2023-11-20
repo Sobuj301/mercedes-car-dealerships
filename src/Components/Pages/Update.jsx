@@ -21,7 +21,7 @@ const Update = () => {
 
         console.log(updateProduct)
 
-        fetch(`http://localhost:5000/brand/${product._id}`,{
+        fetch(`https://server-side-kappa-five.vercel.app/brand/${product._id}`,{
             method:"PUT",
             headers:{
                 "content-type":"application/json"

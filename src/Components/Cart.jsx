@@ -10,7 +10,7 @@ const Cart = ({cart ,carts,setCarts}) => {
 
     const handleDelete = id => {
         console.log(id)
-        fetch(`http://localhost:5000/carts/${id}`,{
+        fetch(`https://server-side-kappa-five.vercel.app/carts/${id}`,{
             method:"DELETE",
         })
         .then(res => res.json())

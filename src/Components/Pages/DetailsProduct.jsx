@@ -10,13 +10,13 @@ const DetailsProduct = () => {
     const { id } = useParams()
     console.log(id)
     useEffect(() => {
-        fetch(`http://localhost:5000/brand/${id}`)
+        fetch(`https://server-side-kappa-five.vercel.app/brand/${id}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
 
     const handleCart = () =>{
-        fetch('http://localhost:5000/carts',{
+        fetch('https://server-side-kappa-five.vercel.app/carts',{
             method:"POST",
             headers:{
                 "content-type":"application/json"

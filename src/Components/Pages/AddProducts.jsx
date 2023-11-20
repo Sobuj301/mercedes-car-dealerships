@@ -17,7 +17,7 @@ const AddProducts = () => {
 
         console.log(addProduct)
 
-        fetch('http://localhost:5000/brands',{
+        fetch('https://server-side-kappa-five.vercel.app/brands',{
             method:"POST",
             headers:{
                 "content-type":"application/json"
@@ -43,7 +43,8 @@ const AddProducts = () => {
                         <label className="label">
                             <span className="label-text">Brand Name</span>
                         </label>
-                        <input type="text" placeholder="Brand Name" name="brand" className="input input-bordered w-full" />
+                        
+                        <input  type="text" placeholder="Brand Name" name="brand"defaultValue={menu} className="input input-bordered w-full" />
                     </div>
                 </div>
                 <div className="flex gap-4">

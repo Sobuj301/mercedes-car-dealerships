@@ -4,7 +4,7 @@ const AllProducts = () => {
     const [products, setProducts] = useState()
 
     useEffect(() => {
-        fetch('http://localhost:5000/brands')
+        fetch('https://server-side-kappa-five.vercel.app/brands')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         {
           path:'/brandDetails/:name',
           element:<BrandDetails></BrandDetails>,
-          loader:({params}) => fetch(`http://localhost:5000/brands/${params.name}`)
+          loader:({params}) => fetch(`https://server-side-kappa-five.vercel.app/brands/${params.name}`)
 
         },
         {
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         {
           path:'/update/:id',
           element:<PrivateRoutes><Update></Update></PrivateRoutes>,
-          loader:({params})=> fetch(`http://localhost:5000/brand/${params.id}`)
+          loader:({params})=> fetch(`https://server-side-kappa-five.vercel.app/brand/${params.id}`)
         }
        
       ])
